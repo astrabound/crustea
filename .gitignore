@@ -1,0 +1,5 @@
+# Folders for misc files
+.sandbox/
+
+# Builds
+target/
