@@ -1,5 +1,6 @@
 use std::{io, cmp::Ordering};
 use rand::Rng;
+use colored::{self, Colorize};
 
 fn main() {
     println!("Welcome to the guessing game!");
@@ -7,20 +8,37 @@ fn main() {
     let secret_num = rand::thread_rng().gen_range(1..101);
     println!("Shh! Secret number is: {}", secret_num);
 
-    let mut guess = String::new();
     println!("Guess a number:");
 
-    io::stdin().read_line(&mut guess).expect(
-        "Failed to read line!");
-    println!("You guessed: {}", guess);
+    loop{
+        let mut guess = String::new();
 
-    let guess: i32 = guess.trim().parse().expect(
-        "Please enter a valid integer.");
+        match io::stdin().read_line(&mut guess){
+            Ok(n) => n,
+            Err(_) => {
+                println!("Failed to read line!");
+                break;
+            }
+        };
 
-    match guess.cmp(&secret_num){
-        Ordering::Equal => println!("You guessed correctly!"),
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-    };
+        println!("You guessed: {}", guess);
+
+        let guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("{}", "Please enter a valid integer.".red());
+                continue;
+            }
+        };
+
+        match guess.cmp(&secret_num){
+            Ordering::Greater => println!("{}", "Too big! Guess again:".truecolor(240,190,140)),
+            Ordering::Less => println!("{}", "Too small! Guess again:".truecolor(240,190,140)),
+            Ordering::Equal => {
+                println!("{}", "You guessed correctly!".bright_green().bold());
+                break;
+            },
+        };
+    }
 
 }
