@@ -1,3 +1,6 @@
+# IDE configuration
+.vscode/
+
 # Folders for misc files
 .sandbox/
 

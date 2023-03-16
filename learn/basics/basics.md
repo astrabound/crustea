@@ -16,6 +16,21 @@ The compiler for rust can be invoked using `rustc module.rs`.
 
 This will generate a binary for the module passed
 
+### Rust analyser
+
+Rust analyser is the language server extension for VSCode. It opens the project
+at level 0 or 1 of the folder structure in which VSCode is opened.
+
+If the project is nested deep, it can be added as a linked project in
+`.vscode/settings.json`. Add relative path to `Cargo.toml` to identify the
+project.
+
+```JSON
+{
+  "rust-analyzer.linkedProjects": ["learn/basics/hello_world/Cargo.toml"]
+}
+```
+
 ## Cargo
 
 Cargo is the package manager for rust. Each package is called a crate.
