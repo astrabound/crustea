@@ -4,7 +4,7 @@ Youtube links for [letsgetrusty](https://www.youtube.com/@letsgetrusty)'s videos
 
 - [Channel Intro](https://www.youtube.com/watch?v=nyy1u4TEnP4)
 - [Rust introduction](https://www.youtube.com/watch?v=OX9HJsJUDxA)
-- [](https://www.youtube.com/watch?v=H0xBSbnQYds)
+- [Number guessing game](https://www.youtube.com/watch?v=H0xBSbnQYds)
 - [](https://www.youtube.com/watch?v=2V0JaMVjzws)
 - [](https://www.youtube.com/watch?v=VFIOSWy93H0)
 - [](https://www.youtube.com/watch?v=n3bPhdiJm9I)
